@@ -5,6 +5,7 @@ package beans;
  */
 public class Token {
     private TokenEnum type;
+
     private String value;//for ID
     private int line;
     private int position;

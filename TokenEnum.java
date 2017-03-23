@@ -5,6 +5,7 @@ package beans;
  */
 public enum TokenEnum {
 
+
     ID(""),
 
     /**
