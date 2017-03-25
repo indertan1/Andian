@@ -30,7 +30,7 @@ public enum TokenEnum {
      * RESERVED WORDS
      */
     IF("if"),ELSE("else"),INT("int"),BOOLEAN("boolean"),
-    STRING("String"),VOID("void"),WHILE("while"),NEW("new"),
+    STRING("String"),FLOAT("float"),VOID("void"),WHILE("while"),NEW("new"),
     BREAK("break"),CONTINUE("continue"),FOR("for"),SWITCH("switch"),
     CASE("case"),DO("do"),RETURN("return"),STRUCT("struct"),
     GOTO("goto"), IMPORT("import");
@@ -41,9 +41,9 @@ public enum TokenEnum {
         return value;
     }
 
-    static public TokenEnum getEnumElementByValue(String value) {
+    static public TokenEnum getEnumElementByValue(String valueL) {
         for(TokenEnum e : TokenEnum.values()) {
-            if(e.getValue() == value) {
+            if(e.getValue().equals(valueL)) {
                 return e;
             }
         }
