@@ -2,18 +2,32 @@ package beans.node;
 
 
 import beans.TableIdRow;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by antonskripacev on 23.03.17.
  */
 public class DeclareFuncNode extends AbstractNode {
-    TableIdRow id;
-    List<StatementNode> statements;
+    private TableIdRow id;
+    private List<StatementNode> statementNodes = new ArrayList<StatementNode>();
+    private List<String> labels = new ArrayList<String>();
 
-    public DeclareFuncNode(TableIdRow id, List<StatementNode> statements, int typeNode, Class classNode) {
-        super(typeNode);
+    public TableIdRow getId() {
+        return id;
+    }
+
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    public List<StatementNode> getStatementNodes() {
+        return statementNodes;
+    }
+
+    public DeclareFuncNode(TableIdRow id, int type) {
+        super(type);
         this.id = id;
-        this.statements = statements;
     }
 }

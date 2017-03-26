@@ -9,8 +9,8 @@ import beans.TableIdRow;
 public class DeclareStructNode extends AbstractNode {
     TableIdRow id;
 
-    public DeclareStructNode(TableIdRow id, int typeNode) {
-        super(typeNode);
+    public DeclareStructNode(TableIdRow id, int type) {
+        super(type);
         this.id = id;
     }
 }

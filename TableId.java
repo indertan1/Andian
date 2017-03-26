@@ -45,13 +45,13 @@ public class TableId {
          2 - функция
          3 - структура
          */
-    public TableIdRow lookupUserIdTable(String varName, int typeId, AllType type) {
+    public TableIdRow lookupUserIdTable(String varName, int typeId, TypeVariable type) {
         if(varName.equals("") || this.isHidden) {
             return null;
         }
 
         for(TableIdRow id : this.ids) {
-            if(varName.equals(id.name) && type == id.type && typeId == id.typeId) {
+            if(varName.equals(id.name) && type.equals(id.type) && typeId == id.typeId) {
                 return id;
             }
         }
@@ -59,17 +59,17 @@ public class TableId {
         return null;
     }
 
-    public static TableIdRow lookupUserIdTableRecursive(TableId table, String varName, int typeId, AllType type) {
+    public static TableIdRow lookupUserIdTableRecursive(TableId table, String varName, int typeId) {
         if(table == null || varName.equals("") || table.isHidden) {
             return null;
         }
 
         for(TableIdRow id : table.ids) {
-            if(varName.equals(id.name) && type == id.type && typeId == id.typeId) {
+            if(varName.equals(id.name) && typeId == id.typeId) {
                 return id;
             }
         }
 
-        return lookupUserIdTableRecursive(table.parent, varName, typeId, type);
+        return lookupUserIdTableRecursive(table.parent, varName, typeId);
     }
 }

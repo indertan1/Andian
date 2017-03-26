@@ -19,7 +19,7 @@ public enum TokenEnum {
      * SIGNS
      * */
     OPENBRACE("{"),CLOSEBRACE("}"),SEMICOLON(";"), COLON(":"),OPENPAREN("("),
-    CLOSEPAREN(")"),OPENSQUARE("["),CLOSESQUARE("]"),
+    CLOSEPAREN(")"),OPENSQUARE("["),CLOSESQUARE("]"), SHARP("#"),
 
     /**
      * CONSTS
