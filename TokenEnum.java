@@ -13,7 +13,7 @@ public enum TokenEnum {
      * */
     PLUS("+"),MINUS("-"),ASSIGN("="),MULTIPLY("*"),DIVIDE("/"),
     AND("&"),OR("|"),DOT("."), COMMA(","),
-    GREATER(">"),LESS("<"),NOT("!"), EQUAL("="),
+    GREATER(">"),LESS("<"),NOT("!"),
 
     /**
      * SIGNS
@@ -24,7 +24,7 @@ public enum TokenEnum {
     /**
      * CONSTS
      */
-    INTCONST(""), DOUBLECONST(""), BOOLEANCONST(""), STRINGCONST(""),
+    INTCONST(""), FLOATCONST(""), BOOLEANCONST(""), STRINGCONST(""),
 
     /**
      * RESERVED WORDS
@@ -49,6 +49,14 @@ public enum TokenEnum {
         }
 
         return null;
+    }
+
+    static public boolean isOperator(TokenEnum e) {
+        if(e == PLUS || e == MINUS || e == MULTIPLY || e == DIVIDE || e == AND || e == OR || e == DOT || e == OPENSQUARE) {
+            return true;
+        }
+
+        return false;
     }
 
     TokenEnum(String value) {

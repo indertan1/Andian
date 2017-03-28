@@ -51,7 +51,7 @@ public class TableId {
         }
 
         for(TableIdRow id : this.ids) {
-            if(varName.equals(id.name) && type.equals(id.type) && typeId == id.typeId) {
+            if(varName.equals(id.getName()) && type.equals(id.getType()) && typeId == id.getTypeId()) {
                 return id;
             }
         }
@@ -65,7 +65,7 @@ public class TableId {
         }
 
         for(TableIdRow id : table.ids) {
-            if(varName.equals(id.name) && typeId == id.typeId) {
+            if(varName.equals(id.getName()) && typeId == id.getTypeId()) {
                 return id;
             }
         }

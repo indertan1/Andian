@@ -45,6 +45,13 @@ public class TypeVariable {
     @Override
     public boolean equals(Object t) {
         TypeVariable t1 = (TypeVariable)t;
-        return t1.type == type && name == t1.name && ref.name == t1.ref.name;
+
+        if(t1.ref == null && ref == null && t1.type == type && name == t1.name) {
+            return true;
+        } else if((t1.ref == null && ref != null) || (t1.ref != null && ref == null)) {
+            return false;
+        }
+
+        return t1.type == type && name == t1.name && ref.equals(t1.ref);
     }
 }
