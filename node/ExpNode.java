@@ -10,27 +10,27 @@ import java.util.List;
 public class ExpNode extends StatementNode {
     private TypeVariable typeExp;
     private String operator;
-    private ExpNode firstOperator;
-    private ExpNode secondOperator;
+    private ExpNode firstOperand;
+    private ExpNode secondOperand;
 
     public ExpNode(int type) {
         super(type);
     }
 
-    public ExpNode getFirstOperator() {
-        return firstOperator;
+    public ExpNode getFirstOperand() {
+        return firstOperand;
     }
 
-    public void setFirstOperator(ExpNode firstOperator) {
-        this.firstOperator = firstOperator;
+    public void setFirstOperand(ExpNode firstOperator) {
+        this.firstOperand = firstOperand;
     }
 
-    public ExpNode getSecondOperator() {
-        return secondOperator;
+    public ExpNode getSecondOperand() {
+        return secondOperand;
     }
 
-    public void setSecondOperator(ExpNode secondOperator) {
-        this.secondOperator = secondOperator;
+    public void setSecondOperand(ExpNode secondOperand) {
+        this.secondOperand = secondOperand;
     }
 
     public void setTypeExp(TypeVariable typeExp) {

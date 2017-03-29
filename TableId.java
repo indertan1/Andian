@@ -9,11 +9,10 @@ import java.util.List;
 /**
  * Created by antonskripacev on 23.03.17.
  */
-public class TableId {
+public class TableId implements Cloneable{
     private TableId parent;
     private List<TableIdRow> ids = new ArrayList<TableIdRow>();
     private boolean isHidden = false;
-    private List<TableId> childTables;
 
     public void setHidden(boolean hidden) {
         isHidden = hidden;
@@ -31,20 +30,20 @@ public class TableId {
         return isHidden;
     }
 
-    public List<TableId> getChildTables() {
-        return childTables;
-    }
-
     public TableId(TableId parent) {
         this.parent = parent;
     }
 
+    public void setParent(TableId parent) {
+        this.parent = parent;
+    }
+
     /*
-         0 - переменная
-         1 - массив
-         2 - функция
-         3 - структура
-         */
+             0 - переменная
+             1 - массив
+             2 - функция
+             3 - структура
+             */
     public TableIdRow lookupUserIdTable(String varName, int typeId, TypeVariable type) {
         if(varName.equals("") || this.isHidden) {
             return null;
@@ -71,5 +70,20 @@ public class TableId {
         }
 
         return lookupUserIdTableRecursive(table.parent, varName, typeId);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        TableId copy = new TableId(null);
+        copy.isHidden = this.isHidden;
+        if(parent == null) {
+            this.parent = null;
+        } else {
+            this.parent = (TableId)this.parent.clone();
+        }
+
+        copy.ids = new ArrayList<TableIdRow>(this.getIds());
+
+        return copy;
     }
 }

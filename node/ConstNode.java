@@ -7,12 +7,11 @@ import beans.TypeVariable;
  */
 public class ConstNode extends ExpNode {
     private String value;
-    private TypeVariable typeNode;
 
     public ConstNode(int type, String value, TypeVariable typeNode) {
         super(type);
         this.value = value;
-        this.typeNode = typeNode;
+        this.setTypeExp(typeNode);
     }
 
     public String getValue() {
@@ -24,10 +23,10 @@ public class ConstNode extends ExpNode {
     }
 
     public TypeVariable getTypeNode() {
-        return typeNode;
+        return getTypeExp();
     }
 
     public void setTypeNode(TypeVariable typeNode) {
-        this.typeNode = typeNode;
+        this.setTypeExp(typeNode);
     }
 }
