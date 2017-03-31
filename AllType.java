@@ -25,4 +25,19 @@ public enum AllType {
 
         return null;
     }
+
+    public static AllType getTypeByTokenEnum(TokenEnum valueL) {
+        switch (valueL) {
+            case INTCONST:
+                return INT;
+            case FLOATCONST:
+                return FLOAT;
+            case STRINGCONST:
+                return STRING;
+            case BOOLEANCONST:
+                return BOOLEAN;
+        }
+
+        return null;
+    }
 }

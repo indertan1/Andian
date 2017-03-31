@@ -1,14 +1,13 @@
-package beans.node;
+package beans.node.exp;
 
-import beans.TypeVariable;
-
-import java.util.List;
+import beans.node.StatementNode;
+import beans.type.TypeVar;
 
 /**
  * Created by antonskripacev on 26.03.17.
  */
 public class ExpNode extends StatementNode {
-    private TypeVariable typeExp;
+    private TypeVar typeExp;
     private String operator;
     private ExpNode firstOperand;
     private ExpNode secondOperand;
@@ -33,7 +32,7 @@ public class ExpNode extends StatementNode {
         this.secondOperand = secondOperand;
     }
 
-    public void setTypeExp(TypeVariable typeExp) {
+    public void setTypeExp(TypeVar typeExp) {
         this.typeExp = typeExp;
     }
 
@@ -45,7 +44,7 @@ public class ExpNode extends StatementNode {
         this.operator = operator;
     }
 
-    public TypeVariable getTypeExp() {
+    public TypeVar getTypeExp() {
         return typeExp;
     }
 }

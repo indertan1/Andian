@@ -1,6 +1,7 @@
-package beans.node;
+package beans.node.exp;
 
-import beans.TypeVariable;
+import beans.node.exp.ExpNode;
+import beans.type.TypeVar;
 
 /**
  * Created by antonskripacev on 26.03.17.
@@ -8,7 +9,7 @@ import beans.TypeVariable;
 public class ConstNode extends ExpNode {
     private String value;
 
-    public ConstNode(int type, String value, TypeVariable typeNode) {
+    public ConstNode(int type, String value, TypeVar typeNode) {
         super(type);
         this.value = value;
         this.setTypeExp(typeNode);
@@ -22,11 +23,11 @@ public class ConstNode extends ExpNode {
         this.value = value;
     }
 
-    public TypeVariable getTypeNode() {
+    public TypeVar getTypeNode() {
         return getTypeExp();
     }
 
-    public void setTypeNode(TypeVariable typeNode) {
+    public void setTypeNode(TypeVar typeNode) {
         this.setTypeExp(typeNode);
     }
 }

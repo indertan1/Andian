@@ -6,6 +6,6 @@ package beans.node;
  */
 public class StatementNode extends AbstractNode {
     public StatementNode(int type) {
-        super(1);
+        super(type);
     }
 }

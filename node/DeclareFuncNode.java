@@ -1,7 +1,7 @@
 package beans.node;
 
 
-import beans.TableIdRow;
+import beans.id.FuncId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,11 @@ import java.util.List;
  * Created by antonskripacev on 23.03.17.
  */
 public class DeclareFuncNode extends AbstractNode {
-    private TableIdRow id;
+    private FuncId id;
     private List<StatementNode> statementNodes = new ArrayList<StatementNode>();
     private List<String> labels = new ArrayList<String>();
 
-    public TableIdRow getId() {
+    public FuncId getId() {
         return id;
     }
 
@@ -26,7 +26,7 @@ public class DeclareFuncNode extends AbstractNode {
         return statementNodes;
     }
 
-    public DeclareFuncNode(TableIdRow id, int type) {
+    public DeclareFuncNode(FuncId id, int type) {
         super(type);
         this.id = id;
     }

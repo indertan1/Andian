@@ -1,6 +1,9 @@
 package beans;
 
+import beans.id.IdRow;
+import beans.id.VarId;
 import beans.node.AbstractNode;
+import beans.type.TypeVar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,28 +13,20 @@ import java.util.List;
  * Created by antonskripacev on 23.03.17.
  */
 public class TableId implements Cloneable{
-    private TableId parent;
-    private List<TableIdRow> ids = new ArrayList<TableIdRow>();
-    private boolean isHidden = false;
+    public TableId parent;
+    public List<IdRow> ids = new ArrayList<IdRow>();
+    public boolean isHidden = false;
 
-    public void setHidden(boolean hidden) {
-        isHidden = hidden;
+    public TableId(TableId parent) {
+        this.parent = parent;
     }
 
     public TableId getParent() {
         return parent;
     }
 
-    public List<TableIdRow> getIds() {
+    public List<IdRow> getIds() {
         return ids;
-    }
-
-    public boolean isHidden() {
-        return isHidden;
-    }
-
-    public TableId(TableId parent) {
-        this.parent = parent;
     }
 
     public void setParent(TableId parent) {
@@ -39,18 +34,16 @@ public class TableId implements Cloneable{
     }
 
     /*
-             0 - переменная
-             1 - массив
-             2 - функция
-             3 - структура
+             type:
+
              */
-    public TableIdRow lookupUserIdTable(String varName, int typeId, TypeVariable type) {
+    public IdRow lookupUserIdTable(String varName, Class type) {
         if(varName.equals("") || this.isHidden) {
             return null;
         }
 
-        for(TableIdRow id : this.ids) {
-            if(varName.equals(id.getName()) && type.equals(id.getType()) && typeId == id.getTypeId()) {
+        for(IdRow id : this.ids) {
+            if(type.equals(id.getClass()) && varName.equals(id.name)) {
                 return id;
             }
         }
@@ -58,32 +51,17 @@ public class TableId implements Cloneable{
         return null;
     }
 
-    public static TableIdRow lookupUserIdTableRecursive(TableId table, String varName, int typeId) {
+    public static IdRow lookupUserIdTableRecursive(TableId table, String varName, Class type) {
         if(table == null || varName.equals("") || table.isHidden) {
             return null;
         }
 
-        for(TableIdRow id : table.ids) {
-            if(varName.equals(id.getName()) && typeId == id.getTypeId()) {
+        for(IdRow id : table.ids) {
+            if(type.equals(id.getClass()) && varName.equals(id.name)) {
                 return id;
             }
         }
 
-        return lookupUserIdTableRecursive(table.parent, varName, typeId);
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        TableId copy = new TableId(null);
-        copy.isHidden = this.isHidden;
-        if(parent == null) {
-            this.parent = null;
-        } else {
-            this.parent = (TableId)this.parent.clone();
-        }
-
-        copy.ids = new ArrayList<TableIdRow>(this.getIds());
-
-        return copy;
+        return lookupUserIdTableRecursive(table.parent, varName, type);
     }
 }
