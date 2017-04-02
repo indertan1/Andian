@@ -30,6 +30,7 @@ public class AbstractNode {
     public static final int BREAK_NODE = 21;
     public static final int CONTINUE_NODE = 22;
     public static final int RETURN_NODE = 23;
+    public static final int FIELD_NODE = 24;
 
     public int typeNode;
 

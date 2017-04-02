@@ -10,7 +10,7 @@ public enum AllType {
     BOOLEAN("boolean"),
     VOID("void");
 
-    String value;
+    public String value;
 
     AllType(String value) {
         this.value = value;

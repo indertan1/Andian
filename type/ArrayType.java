@@ -11,4 +11,14 @@ public class ArrayType extends  TypeVar{
     @Nullable public StructId structId;//if array is type of Struct
     @Nullable public AllType primitiveType;//if array is primitive type
     public int levels;//[][][] - levels = 3
+
+    @Override
+    public TypeVar clone() {
+        ArrayType arrayType = new ArrayType();
+        arrayType.structId = this.structId;
+        arrayType.primitiveType = this.primitiveType;
+        arrayType.levels = this.levels;
+
+        return arrayType;
+    }
 }

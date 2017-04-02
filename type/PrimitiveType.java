@@ -10,4 +10,12 @@ public class PrimitiveType extends TypeVar {
 
     public PrimitiveType(){};
     public PrimitiveType(AllType type){ this.type = type;};
+
+    @Override
+    public TypeVar clone() {
+        PrimitiveType primitiveType = new PrimitiveType();
+        primitiveType.type = this.type;
+
+        return primitiveType;
+    }
 }

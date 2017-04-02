@@ -7,4 +7,12 @@ import beans.id.StructId;
  */
 public class StructType extends TypeVar {
     public StructId structId;
+
+    @Override
+    public TypeVar clone() {
+        StructType structType = new StructType();
+        structType.structId = this.structId;
+
+        return structType;
+    }
 }
