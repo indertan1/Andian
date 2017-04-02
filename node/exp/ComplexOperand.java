@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ComplexOperand extends ExpNode {
     public IdNode first;
-    public List<ExpNode> operands = new ArrayList<ExpNode>();//StructChildNode or ExpNode
+    public List<ExpNode> operands = new ArrayList<ExpNode>();
     public List<String> operators = new ArrayList<String>();
 
     public ComplexOperand(int type) {

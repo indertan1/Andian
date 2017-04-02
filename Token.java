@@ -6,7 +6,7 @@ package beans;
 public class Token {
     private TokenEnum type;
 
-    private String value;//for ID
+    private String value;//for ID, CONST
     private int line;
     private int position;
 

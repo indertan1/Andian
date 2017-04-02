@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class NewNode extends ExpNode {
     public List<ExpNode> sizes = new ArrayList<ExpNode>();//for arrays, new int[10+15] - size = 10+15
+    //TODO type
 
     public NewNode(int type) {
         super(type);

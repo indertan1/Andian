@@ -1,7 +1,9 @@
-package beans.node.exp;
+package beans.node;
 
+import beans.id.VarId;
 import beans.node.AbstractNode;
 import beans.node.StatementNode;
+import beans.node.exp.ExpNode;
 import beans.type.TypeVar;
 
 /**
@@ -9,6 +11,7 @@ import beans.type.TypeVar;
  */
 public class DeclareVarNode extends StatementNode {
     public TypeVar type;
+    public VarId var;
     public ExpNode expNode;
 
     public DeclareVarNode(int typeNode) {

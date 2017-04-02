@@ -33,7 +33,7 @@ public enum TokenEnum {
     STRING("String"),FLOAT("float"),VOID("void"),WHILE("while"),NEW("new"),
     BREAK("break"),CONTINUE("continue"),FOR("for"),SWITCH("switch"),
     CASE("case"),DO("do"),RETURN("return"),STRUCT("struct"),
-    GOTO("goto"), IMPORT("import");
+    GOTO("goto"), IMPORT("import"), TRUE("true"), FALSE("false");
 
     private String value;
 

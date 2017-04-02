@@ -7,8 +7,8 @@ import beans.node.exp.ExpNode;
  * Created by antonskripacev on 29.03.17.
  */
 public class IdNode extends ExpNode {
-    IdRow id;
-    String name;//for struct
+    public IdRow id;
+    public String name;//for struct
 
     public IdNode(int type, IdRow id) {
         super(type);
