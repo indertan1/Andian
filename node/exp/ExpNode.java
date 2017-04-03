@@ -20,7 +20,7 @@ public class ExpNode extends StatementNode {
         return firstOperand;
     }
 
-    public void setFirstOperand(ExpNode firstOperator) {
+    public void setFirstOperand(ExpNode firstOperand) {
         this.firstOperand = firstOperand;
     }
 

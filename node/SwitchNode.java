@@ -1,5 +1,7 @@
 package beans.node;
 
+import beans.node.exp.ExpNode;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -10,6 +12,7 @@ import java.util.LinkedList;
  */
 public class SwitchNode extends StatementNode {
     public LinkedHashMap<String, ArrayList<StatementNode>> cases = new LinkedHashMap<String, ArrayList<StatementNode>>();
+    public ExpNode exp;
 
     public SwitchNode(int type) {
         super(type);

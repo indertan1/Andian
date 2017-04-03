@@ -5,7 +5,7 @@ package beans.node;
  */
 public class GotoNode extends StatementNode {
     //TODO LabelNode
-    private String label;
+    public String label;
 
     public GotoNode(int type, String label) {
         super(type);
